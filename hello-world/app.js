@@ -17,10 +17,11 @@ let response;
 exports.lambdaHandler = async (event, context) => {
     try {
         // const ret = await axios(url);
+        const eventDetails = JSON.stringify(event);
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello world',
+                message: 'Hello world. You sent over: ' +  eventDetails,
                 // location: ret.data.trim()
             })
         }
